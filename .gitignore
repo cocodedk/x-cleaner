@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.profile/
+.profile-likes/
+state/
+state-likes/
+.claude/
+*.log
+.env
+.env.local

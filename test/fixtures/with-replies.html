@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /><title>Fixture - with_replies</title></head>
+  <body>
+    <main>
+      <!-- G1: parent + my reply (classic pair) -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="User-Name"><a role="link" href="/other1">@other1</a></div>
+          <a href="/other1/status/9001">link</a>
+          <button data-testid="caret">…</button>
+        </article>
+      </div>
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet" data-fixture-id="1700000000000000010">
+          <div data-testid="User-Name"><a role="link" href="/me">@me</a></div>
+          <div>my reply A</div>
+          <a href="/me/status/1700000000000000010">link</a>
+          <button data-testid="caret" data-target="1700000000000000010">…</button>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G2: standalone original by me — NOT a reply -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="User-Name"><a role="link" href="/me">@me</a></div>
+          <div>an original post</div>
+          <a href="/me/status/1700000000000000020">link</a>
+          <button data-testid="caret">…</button>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G3: parent + "Show more replies" placeholder + my reply.
+           "Show more replies" must NOT split the group. -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="User-Name"><a role="link" href="/other2">@other2</a></div>
+          <a href="/other2/status/9002">link</a>
+          <button data-testid="caret">…</button>
+        </article>
+      </div>
+      <div data-testid="cellInnerDiv">Show more replies</div>
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet" data-fixture-id="1700000000000000030">
+          <div data-testid="User-Name"><a role="link" href="/me">@me</a></div>
+          <div>my reply B</div>
+          <a href="/me/status/1700000000000000030">link</a>
+          <button data-testid="caret" data-target="1700000000000000030">…</button>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G4: standalone reply by me, parent not visible.
+           Surfaces with "Replying to" text inside the card. -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet" data-fixture-id="1700000000000000040">
+          <div data-testid="User-Name"><a role="link" href="/me">@me</a></div>
+          <div>Replying to @ghost</div>
+          <div>my standalone reply</div>
+          <a href="/me/status/1700000000000000040">link</a>
+          <button data-testid="caret" data-target="1700000000000000040">…</button>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G5: my repost — should NOT be a reply -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="socialContext">You reposted</div>
+          <div data-testid="User-Name"><a role="link" href="/other3">@other3</a></div>
+          <a href="/other3/status/9003">link</a>
+          <button data-testid="caret">…</button>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G6: my quote tweet (nested article) — should NOT be a reply -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="User-Name"><a role="link" href="/me">@me</a></div>
+          <div>my comment on someone else's tweet</div>
+          <a href="/me/status/1700000000000000050">link</a>
+          <button data-testid="caret">…</button>
+          <article data-testid="tweet">
+            <div data-testid="User-Name"><a role="link" href="/quoted">@quoted</a></div>
+            <div>quoted text</div>
+          </article>
+        </article>
+      </div>
+
+      <div data-testid="cellInnerDiv"></div>
+
+      <!-- G7: stranger / ad — ignore -->
+      <div data-testid="cellInnerDiv">
+        <article data-testid="tweet">
+          <div data-testid="User-Name"><a role="link" href="/stranger">@stranger</a></div>
+          <a href="/stranger/status/9004">link</a>
+          <button data-testid="caret">…</button>
+        </article>
+      </div>
+    </main>
+
+    <div role="menu" id="action-menu" style="display:none">
+      <div role="menuitem">Pin to your profile</div>
+      <div role="menuitem" data-action="delete">Delete</div>
+    </div>
+    <div data-testid="confirmationSheet" style="display:none">
+      <button data-testid="confirmationSheetConfirm">Delete</button>
+    </div>
+
+    <script>
+      let lastTarget = null;
+      document.querySelectorAll('[data-testid="caret"]').forEach((b) => {
+        b.addEventListener("click", () => {
+          lastTarget = b.getAttribute("data-target");
+          if (!lastTarget) return;
+          document.getElementById("action-menu").style.display = "block";
+        });
+      });
+      document.querySelector('[data-action="delete"]').addEventListener("click", () => {
+        document.getElementById("action-menu").style.display = "none";
+        document.querySelector('[data-testid="confirmationSheet"]').style.display = "block";
+      });
+      document.querySelector('[data-testid="confirmationSheetConfirm"]').addEventListener("click", () => {
+        document.querySelector('[data-testid="confirmationSheet"]').style.display = "none";
+        const target = document.querySelector(`[data-fixture-id="${lastTarget}"]`);
+        if (target) target.remove();
+      });
+    </script>
+  </body>
+</html>

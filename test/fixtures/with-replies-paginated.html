@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /><title>Fixture - paginated cell groups</title></head>
+  <body>
+    <main id="feed"></main>
+    <script>
+      // Each "page" is one thread group: parent (other) + reply (me).
+      // Page 2 has only a parent + reply; page 3 has reply + standalone post.
+      const pages = [
+        [
+          { author: "other1", id: "9001", reply: false },
+          { author: "me", id: "1700000000000000010", reply: true },
+        ],
+        [
+          { author: "other2", id: "9002", reply: false },
+          { author: "me", id: "1700000000000000030", reply: true },
+        ],
+        [
+          { author: "other3", id: "9003", reply: false },
+          { author: "me", id: "1700000000000000040", reply: true },
+          { sep: true },
+          { author: "me", id: "1700000000000000050", reply: false }, // standalone original
+        ],
+      ];
+      let pageIdx = 0;
+
+      function render(items) {
+        const feed = document.getElementById("feed");
+        for (const it of items) {
+          const cell = document.createElement("div");
+          cell.setAttribute("data-testid", "cellInnerDiv");
+          if (it.sep) {
+            feed.appendChild(cell);
+            continue;
+          }
+          const article = document.createElement("article");
+          article.setAttribute("data-testid", "tweet");
+          const userName = document.createElement("div");
+          userName.setAttribute("data-testid", "User-Name");
+          const link = document.createElement("a");
+          link.setAttribute("role", "link");
+          link.setAttribute("href", `/${it.author}`);
+          link.textContent = `@${it.author}`;
+          userName.appendChild(link);
+          article.appendChild(userName);
+          const status = document.createElement("a");
+          status.setAttribute("href", `/${it.author}/status/${it.id}`);
+          status.textContent = "link";
+          article.appendChild(status);
+          cell.appendChild(article);
+          feed.appendChild(cell);
+        }
+        // Group separator after each page
+        const sep = document.createElement("div");
+        sep.setAttribute("data-testid", "cellInnerDiv");
+        feed.appendChild(sep);
+      }
+
+      render(pages[0]);
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+          pageIdx++;
+          if (pages[pageIdx]) render(pages[pageIdx]);
+        }
+      });
+    </script>
+    <div style="height:2000px"></div>
+  </body>
+</html>
