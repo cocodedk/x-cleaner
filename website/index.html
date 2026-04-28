@@ -1,0 +1,112 @@
+<!doctype html>
+<!-- SEO keywords:
+     primary:   delete X.com replies
+     secondary: x-cleaner, local twitter cleanup, browser automation, playwright
+     intent:    transactional
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>x-cleaner — Delete your own X.com replies, slowly and locally</title>
+<meta name="description" content="Local Node.js + Playwright tool that deletes your own X.com replies through your logged-in browser. No API tokens, no servers, ~6 per minute pacing." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://cocodedk.github.io/x-cleaner/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/x-cleaner/" />
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/x-cleaner/fa/" />
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/x-cleaner/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="x-cleaner" />
+<meta property="og:title" content="x-cleaner — Delete your own X.com replies, slowly and locally" />
+<meta property="og:description" content="Local Node.js + Playwright tool that deletes your own X.com replies through your logged-in browser. No API tokens, no third-party servers." />
+<meta property="og:url" content="https://cocodedk.github.io/x-cleaner/" />
+<meta property="og:image" content="https://cocodedk.github.io/x-cleaner/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="x-cleaner project card with pacing stats — ~6 deletes per minute, runs in your local browser, Apache-2.0." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="x-cleaner — Delete your own X.com replies, slowly and locally" />
+<meta name="twitter:description" content="Local Node.js + Playwright tool that deletes your own X.com replies through your logged-in browser." />
+<meta name="twitter:image" content="https://cocodedk.github.io/x-cleaner/og.png" />
+<meta name="twitter:image:alt" content="x-cleaner project card with pacing stats." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Vazirmatn:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"x-cleaner","description":"Local Node.js + Playwright tool that deletes your own X.com replies through your own logged-in browser. No API tokens, no third-party servers.","url":"https://cocodedk.github.io/x-cleaner/","downloadUrl":"https://github.com/cocodedk/x-cleaner","applicationCategory":"BusinessApplication","operatingSystem":"Linux, macOS, Windows","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Babak Bandpey","url":"https://cocode.dk","sameAs":["https://linkedin.com/in/babakbandpey","https://github.com/cocodedk"]},"codeRepository":"https://github.com/cocodedk/x-cleaner"}
+</script>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <span class="brand"><b>x-cleaner</b> &nbsp;·&nbsp; v1 &nbsp;·&nbsp; replies only</span>
+    <a href="fa/" class="lang-switch">فارسی</a>
+  </div>
+
+  <h1>Delete your own X.com replies, slowly.</h1>
+  <p class="tagline">A local Node.js + Playwright tool that drives your own logged-in browser. No API tokens, no third-party server, no password automation. Pacing target: ~6 deletes per minute.</p>
+  <p>
+    <a class="cta" href="https://github.com/cocodedk/x-cleaner" target="_blank" rel="noreferrer">Get the source on GitHub</a>
+    <a class="cta-secondary" href="https://github.com/cocodedk/x-cleaner#install" target="_blank" rel="noreferrer">Install</a>
+  </p>
+
+  <h2>What it actually does</h2>
+  <p>v1 walks <code>x.com/&lt;handle&gt;/with_replies</code> in a visible Chromium window you control, identifies your own reply cards, and deletes them one at a time through the same caret menu you would click yourself. The browser profile is yours. Cookies live in a local <code>./.profile/</code> directory. Originals, reposts, and likes are deferred &mdash; the modules exist and are tested, just not wired into the CLI yet.</p>
+
+  <h2>How it works (3 steps)</h2>
+  <ol>
+    <li><b>Log in once.</b> <code>npm run login</code> opens Chromium against the X login flow. You sign in by hand. Cookies land in <code>./.profile/</code>.</li>
+    <li><b>Dry run.</b> <code>npm run run:cleaner -- --handle=&lt;you&gt; --dry-run --max=20</code> prints which reply ids would be deleted. No clicks happen.</li>
+    <li><b>Real run.</b> Drop <code>--dry-run</code>. Watch the visible window. <code>Ctrl-C</code> stops at any point &mdash; state is flushed after every action, so resume is the same command again.</li>
+  </ol>
+
+  <h2>Pacing defaults</h2>
+  <table>
+    <thead><tr><th>Knob</th><th>Default</th></tr></thead>
+    <tbody>
+      <tr><td>Inter-deletion gap</td><td class="num">6&ndash;14 s</td></tr>
+      <tr><td>Long break every</td><td class="num">30 deletes</td></tr>
+      <tr><td>Long break length</td><td class="num">60&ndash;180 s</td></tr>
+      <tr><td>Hourly cap</td><td class="num">360</td></tr>
+      <tr><td>Daily cap</td><td class="num">1500</td></tr>
+      <tr><td>Errors &rarr; 30 min pause</td><td class="num">3</td></tr>
+      <tr><td>Errors &rarr; abort</td><td class="num">10</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When something breaks</h2>
+  <p>X ships UI changes on its own schedule. Selectors are a snapshot of the DOM on <b>2026-04-27</b>. When a selector goes stale, the runner saves a diagnostic bundle to <code>state/diagnostics/&lt;ts&gt;-&lt;reason&gt;/</code>:</p>
+  <ul>
+    <li><code>screenshot.png</code> &mdash; full-page capture at the moment of failure</li>
+    <li><code>page.html</code> &mdash; full DOM</li>
+    <li><code>article.html</code> &mdash; the targeted tweet card</li>
+    <li><code>snapshot.txt</code> &mdash; accessibility tree</li>
+    <li><code>meta.json</code> &mdash; reason, URL, timestamps</li>
+  </ul>
+  <p>Open the bundle, find the selector that broke, update <code>src/selectors.ts</code> and <code>test/fixtures/with-replies.html</code>, re-run tests, then resume.</p>
+
+  <h2>Install</h2>
+  <pre><code>git clone https://github.com/cocodedk/x-cleaner
+cd x-cleaner
+npm install
+npx playwright install chromium</code></pre>
+  <p class="muted">Requires Node 20+.</p>
+
+  <h2>Caveats &mdash; read these</h2>
+  <div class="warn">
+    <p><strong>Grey area of X's terms.</strong> Browser automation of your own account for content deletion sits in a grey area. We mirror what Cyd, Redact, XDelete do. Use a real account at your own discretion.</p>
+    <p>Selectors break without notice. No CAPTCHA solving, no proxy rotation, no headless-stealth tricks. If X challenges you, the run aborts and you handle it as a human.</p>
+  </div>
+
+  <h2>License &amp; source</h2>
+  <p>Apache-2.0. Source on <a href="https://github.com/cocodedk/x-cleaner" target="_blank" rel="noreferrer">github.com/cocodedk/x-cleaner</a>. Issues and selector-breakage reports welcome.</p>
+
+  <footer>
+    <p>Apache-2.0 &nbsp;|&nbsp; &copy; 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; Created by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></p>
+  </footer>
+</main>
+</body>
+</html>

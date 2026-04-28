@@ -2,7 +2,18 @@
   "name": "x-cleaner",
   "version": "0.0.0",
   "private": true,
+  "license": "Apache-2.0",
   "type": "module",
+  "description": "Local Chromium-driven cleanup tool for your own X.com replies. No API tokens, no third-party server, no password automation.",
+  "homepage": "https://cocodedk.github.io/x-cleaner/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cocodedk/x-cleaner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cocodedk/x-cleaner/issues"
+  },
+  "author": "Babak Bandpey <bb@cocode.dk> (https://cocode.dk)",
   "engines": {
     "node": ">=20"
   },

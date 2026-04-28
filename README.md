@@ -7,6 +7,11 @@ Pacing target: **~6 deletes / minute** with jittered timing and long breaks.
 Designed to keep one residential IP and one logged-in profile believable to
 X's automation defenses.
 
+## Website
+
+- [English](https://cocodedk.github.io/x-cleaner/)
+- [فارسی (Persian)](https://cocodedk.github.io/x-cleaner/fa/)
+
 ## Status
 
 v1 covers replies only (the most common cleanup case). Originals, reposts,
@@ -142,3 +147,16 @@ Tunable via env later; defaults are deliberately conservative.
 - [`docs/rate-limits.md`](docs/rate-limits.md) — pacing strategy
 - [`docs/testing.md`](docs/testing.md) — three-layer test strategy
 - [`docs/research.md`](docs/research.md) — sources and prior art
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for local setup, hooks, branch
+naming, and the PR checklist. Security issues: see [`SECURITY.md`](SECURITY.md).
+
+## Author
+
+**Babak Bandpey** — [cocode.dk](https://cocode.dk) | [LinkedIn](https://linkedin.com/in/babakbandpey) | [GitHub](https://github.com/cocodedk)
+
+## License
+
+Apache-2.0 | © 2026 [Cocode](https://cocode.dk) | Created by [Babak Bandpey](https://linkedin.com/in/babakbandpey)

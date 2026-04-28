@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- SEO keywords:
+     primary:   حذف پاسخ‌های X.com
+     secondary: ایکس‌کلینر, پاکسازی توییتر, اتوماسیون مرورگر, Playwright
+     intent:    transactional
+-->
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>x-cleaner — حذف آهسته و محلی پاسخ‌های خودتان در X.com</title>
+<meta name="description" content="ابزار محلی Node.js و Playwright که پاسخ‌های خودتان در X.com را از طریق مرورگر شخصی شما حذف می‌کند. بدون توکن API، بدون سرور شخص ثالث، با سرعت محتاطانه‌ی حدود ۶ حذف در دقیقه." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://cocodedk.github.io/x-cleaner/fa/" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/x-cleaner/" />
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/x-cleaner/fa/" />
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/x-cleaner/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="x-cleaner" />
+<meta property="og:title" content="x-cleaner — حذف آهسته و محلی پاسخ‌های خودتان در X.com" />
+<meta property="og:description" content="ابزار محلی Node.js و Playwright که پاسخ‌های خودتان در X.com را از طریق مرورگر شخصی شما حذف می‌کند." />
+<meta property="og:url" content="https://cocodedk.github.io/x-cleaner/fa/" />
+<meta property="og:image" content="https://cocodedk.github.io/x-cleaner/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="کارت پروژه‌ی x-cleaner با آمار سرعت — حدود ۶ حذف در دقیقه، اجرا در مرورگر محلی، مجوز Apache-2.0." />
+<meta property="og:locale" content="fa_IR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="x-cleaner — حذف آهسته و محلی پاسخ‌های خودتان در X.com" />
+<meta name="twitter:description" content="ابزار محلی Node.js و Playwright که پاسخ‌های خودتان در X.com را حذف می‌کند." />
+<meta name="twitter:image" content="https://cocodedk.github.io/x-cleaner/og.png" />
+<meta name="twitter:image:alt" content="کارت پروژه‌ی x-cleaner با آمار سرعت." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"x-cleaner","description":"Local Node.js + Playwright tool that deletes your own X.com replies through your own logged-in browser. No API tokens, no third-party servers.","url":"https://cocodedk.github.io/x-cleaner/","downloadUrl":"https://github.com/cocodedk/x-cleaner","applicationCategory":"BusinessApplication","operatingSystem":"Linux, macOS, Windows","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Babak Bandpey","url":"https://cocode.dk","sameAs":["https://linkedin.com/in/babakbandpey","https://github.com/cocodedk"]},"codeRepository":"https://github.com/cocodedk/x-cleaner"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ایکس‌کلینر","description":"ابزار محلی Node.js و Playwright برای حذف پاسخ‌های خودتان در X.com از طریق مرورگر شخصی. بدون توکن API و بدون سرور شخص ثالث.","url":"https://cocodedk.github.io/x-cleaner/fa/","downloadUrl":"https://github.com/cocodedk/x-cleaner","applicationCategory":"BusinessApplication","operatingSystem":"Linux, macOS, Windows","inLanguage":"fa","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"بابک بندپی","url":"https://cocode.dk","sameAs":["https://linkedin.com/in/babakbandpey","https://github.com/cocodedk"]},"codeRepository":"https://github.com/cocodedk/x-cleaner"}
+</script>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <span class="brand"><b>x-cleaner</b> &nbsp;·&nbsp; نسخه‌ی ۱ &nbsp;·&nbsp; فقط پاسخ‌ها</span>
+    <a href="../" class="lang-switch">English</a>
+  </div>
+
+  <h1>پاسخ‌های خودتان را در X.com، آهسته حذف کنید.</h1>
+  <p class="tagline">یک ابزار محلی مبتنی بر Node.js و Playwright که مرورگر لاگین‌شده‌ی خودتان را هدایت می‌کند. بدون توکن API، بدون سرور شخص ثالث و بدون اتوماسیون رمز عبور. هدف سرعت: حدود ۶ حذف در دقیقه.</p>
+  <p>
+    <a class="cta" href="https://github.com/cocodedk/x-cleaner" target="_blank" rel="noreferrer">دریافت سورس از گیت‌هاب</a>
+    <a class="cta-secondary" href="https://github.com/cocodedk/x-cleaner#install" target="_blank" rel="noreferrer">نصب</a>
+  </p>
+
+  <h2>دقیقاً چه کاری انجام می‌دهد</h2>
+  <p>نسخه‌ی ۱ صفحه‌ی <code>x.com/&lt;handle&gt;/with_replies</code> را در یک پنجره‌ی Chromium قابل مشاهده‌ی شما باز می‌کند، کارت‌های پاسخ خودتان را شناسایی می‌کند و یکی‌یکی از طریق همان منوی فلش‌مانندی که خودتان کلیک می‌کردید حذف می‌کند. پروفایل مرورگر متعلق به شماست؛ کوکی‌ها در پوشه‌ی محلی <code>./.profile/</code> ذخیره می‌شوند. حذف توییت‌های اصلی، ری‌توییت‌ها و لایک‌ها به نسخه‌های بعدی موکول شده &mdash; ماژول‌هایش وجود دارند و تست شده‌اند، فقط هنوز به CLI متصل نیستند.</p>
+
+  <h2>سه مرحله‌ی کار</h2>
+  <ol>
+    <li><b>یک‌بار وارد شوید.</b> دستور <code>npm run login</code> صفحه‌ی ورود X را در Chromium باز می‌کند. به‌صورت دستی وارد شوید. کوکی‌ها در <code>./.profile/</code> ذخیره می‌شوند.</li>
+    <li><b>اجرای آزمایشی.</b> <code>npm run run:cleaner -- --handle=&lt;you&gt; --dry-run --max=20</code> فهرست پاسخ‌هایی که حذف می‌شدند را چاپ می‌کند. هیچ کلیکی انجام نمی‌شود.</li>
+    <li><b>اجرای واقعی.</b> پرچم <code>--dry-run</code> را بردارید. پنجره‌ی مرورگر را تماشا کنید. <code>Ctrl-C</code> در هر لحظه متوقف می‌کند &mdash; وضعیت بعد از هر عمل ذخیره می‌شود، پس ادامه‌دادن یعنی همان دستور را دوباره اجرا کردن.</li>
+  </ol>
+
+  <h2>پیش‌فرض‌های سرعت</h2>
+  <table>
+    <thead><tr><th>پارامتر</th><th>پیش‌فرض</th></tr></thead>
+    <tbody>
+      <tr><td>فاصله‌ی بین حذف‌ها</td><td class="num">۶ تا ۱۴ ثانیه</td></tr>
+      <tr><td>وقفه‌ی بلند هر</td><td class="num">۳۰ حذف</td></tr>
+      <tr><td>طول وقفه‌ی بلند</td><td class="num">۶۰ تا ۱۸۰ ثانیه</td></tr>
+      <tr><td>سقف ساعتی</td><td class="num">۳۶۰</td></tr>
+      <tr><td>سقف روزانه</td><td class="num">۱۵۰۰</td></tr>
+      <tr><td>خطا &larr; وقفه‌ی ۳۰ دقیقه</td><td class="num">۳</td></tr>
+      <tr><td>خطا &larr; توقف کامل</td><td class="num">۱۰</td></tr>
+    </tbody>
+  </table>
+
+  <h2>وقتی چیزی خراب می‌شود</h2>
+  <p>X رابط کاربری‌اش را طبق برنامه‌ی خودش تغییر می‌دهد. سلکتورها عکس‌برداری از DOM در تاریخ <b>۲۰۲۶-۰۴-۲۷</b> هستند. وقتی سلکتوری از کار می‌افتد، اجراکننده یک بسته‌ی تشخیص در مسیر <code>state/diagnostics/&lt;ts&gt;-&lt;reason&gt;/</code> ذخیره می‌کند:</p>
+  <ul>
+    <li><code>screenshot.png</code> &mdash; عکس کامل صفحه در لحظه‌ی خطا</li>
+    <li><code>page.html</code> &mdash; کل DOM</li>
+    <li><code>article.html</code> &mdash; کارت توییت هدف</li>
+    <li><code>snapshot.txt</code> &mdash; درخت دسترس‌پذیری</li>
+    <li><code>meta.json</code> &mdash; دلیل، URL و زمان‌ها</li>
+  </ul>
+  <p>بسته را باز کنید، سلکتور خراب را پیدا کنید، <code>src/selectors.ts</code> و <code>test/fixtures/with-replies.html</code> را به‌روزرسانی کنید، تست‌ها را دوباره اجرا کنید و سپس ادامه دهید.</p>
+
+  <h2>نصب</h2>
+  <pre><code>git clone https://github.com/cocodedk/x-cleaner
+cd x-cleaner
+npm install
+npx playwright install chromium</code></pre>
+  <p class="muted">نیازمند Node نسخه‌ی ۲۰ یا بالاتر.</p>
+
+  <h2>هشدارها &mdash; حتماً بخوانید</h2>
+  <div class="warn">
+    <p><strong>منطقه‌ی خاکستری شرایط استفاده‌ی X.</strong> اتوماسیون مرورگر روی حساب خودتان برای حذف محتوا، در منطقه‌ی خاکستری قوانین X قرار دارد. ما دقیقاً همان کاری را می‌کنیم که Cyd، Redact و XDelete انجام می‌دهند. استفاده از یک حساب واقعی به انتخاب و مسئولیت خودتان است.</p>
+    <p>سلکتورها بدون اطلاع قبلی خراب می‌شوند. هیچ راه‌حلی برای CAPTCHA، چرخش پراکسی یا ترفندهای headless-stealth وجود ندارد. اگر X چالشی نشان دهد، اجرا متوقف می‌شود و خودتان به‌صورت انسانی با آن مواجه می‌شوید.</p>
+  </div>
+
+  <h2>مجوز و سورس</h2>
+  <p>Apache-2.0. سورس در <a href="https://github.com/cocodedk/x-cleaner" target="_blank" rel="noreferrer">github.com/cocodedk/x-cleaner</a>. گزارش ایراد و خرابی سلکتورها استقبال می‌شود.</p>
+
+  <footer>
+    <p>Apache-2.0 &nbsp;|&nbsp; &copy; ۱۴۰۵ <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; ساخته شده توسط <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">بابک بندپی</a></p>
+  </footer>
+</main>
+</body>
+</html>

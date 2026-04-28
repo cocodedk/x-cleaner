@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>x-cleaner OG image</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090f;
+    --surface: #13131a;
+    --text: #e8e8ec;
+    --muted: #7a7a85;
+    --border: #2a2a35;
+    --accent: #f5a524;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; position: relative; }
+  .card { width: 1200px; height: 630px; display: grid; grid-template-columns: 1.05fr 1fr; }
+  .left { padding: 48px 56px 0; border-right: 1px solid var(--border); }
+  .right { padding: 48px 56px 0; background: linear-gradient(180deg, var(--bg) 0%, #0c0c14 100%); }
+  .badge { display: inline-flex; align-items: center; gap: 10px; font-family: "JetBrains Mono", monospace; font-size: 14px; color: var(--muted); padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px; }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .name { font-size: 64px; font-weight: 700; letter-spacing: -0.03em; margin-top: 22px; line-height: 1; }
+  .name b { color: var(--accent); }
+  .tagline { font-size: 21px; color: var(--text); margin-top: 16px; line-height: 1.35; max-width: 34ch; font-weight: 400; }
+  .tagline span { color: var(--muted); }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  .chip { font-family: "JetBrains Mono", monospace; font-size: 14px; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 7px 13px; border-radius: 6px; }
+  .chip b { color: var(--accent); font-weight: 600; }
+  .footer { position: absolute; left: 56px; bottom: 110px; font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--muted); }
+  .footer b { color: var(--text); font-weight: 500; }
+  .right-label { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
+  .counter { margin-top: 12px; }
+  .counter .num { font-family: "JetBrains Mono", monospace; font-size: 76px; font-weight: 600; color: var(--accent); line-height: 1; letter-spacing: -0.02em; }
+  .counter .unit { font-family: "JetBrains Mono", monospace; font-size: 18px; color: var(--muted); margin-top: 8px; }
+  .chart { display: flex; align-items: flex-end; gap: 6px; height: 96px; margin-top: 20px; padding: 12px 14px; border: 1px solid var(--border); background: var(--surface); border-radius: 6px; }
+  .bar { flex: 1; background: var(--accent); border-radius: 2px 2px 0 0; opacity: 0.85; }
+  .bar.gap { background: var(--border); opacity: 1; }
+  .scale { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); margin-top: 8px; padding: 0 14px; }
+  .caps { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cap { border: 1px solid var(--border); padding: 12px 14px; border-radius: 6px; background: var(--surface); }
+  .cap .k { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .cap .v { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--text); font-weight: 600; margin-top: 4px; }
+  .accent-bar { height: 4px; background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%); position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="left">
+    <span class="badge"><span class="dot"></span>v1 &middot; replies only &middot; Apache-2.0</span>
+    <div class="name"><b>x-</b>cleaner</div>
+    <div class="tagline">Delete your own X.com replies, slowly. <span>Local browser, your account, no API tokens.</span></div>
+    <div class="chips">
+      <span class="chip"><b>~6</b>/min</span>
+      <span class="chip">Local browser</span>
+      <span class="chip">Node 20+</span>
+      <span class="chip">Playwright</span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-label">Pacing target</div>
+    <div class="counter">
+      <div class="num">6.0</div>
+      <div class="unit">deletes / minute &middot; jittered 6&ndash;14 s</div>
+    </div>
+    <div class="chart">
+      <div class="bar" style="height: 42%"></div>
+      <div class="bar" style="height: 58%"></div>
+      <div class="bar" style="height: 47%"></div>
+      <div class="bar" style="height: 65%"></div>
+      <div class="bar" style="height: 51%"></div>
+      <div class="bar" style="height: 60%"></div>
+      <div class="bar" style="height: 44%"></div>
+      <div class="bar" style="height: 56%"></div>
+      <div class="bar gap" style="height: 18%"></div>
+      <div class="bar gap" style="height: 14%"></div>
+      <div class="bar" style="height: 49%"></div>
+      <div class="bar" style="height: 62%"></div>
+      <div class="bar" style="height: 53%"></div>
+      <div class="bar" style="height: 47%"></div>
+      <div class="bar" style="height: 59%"></div>
+    </div>
+    <div class="scale"><span>0:00</span><span>long break</span><span>3:00</span></div>
+    <div class="caps">
+      <div class="cap"><div class="k">Hourly cap</div><div class="v">360</div></div>
+      <div class="cap"><div class="k">Daily cap</div><div class="v">1500</div></div>
+    </div>
+  </div>
+</div>
+<div class="footer">Built by <b>Babak Bandpey</b> &middot; cocode.dk &middot; github.com/cocodedk/x-cleaner</div>
+<div class="accent-bar"></div>
+</body>
+</html>

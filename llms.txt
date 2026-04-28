@@ -1,0 +1,23 @@
+# x-cleaner
+
+> Local Chromium-driven cleanup tool for your own X.com (Twitter) replies. No API tokens, no third-party server, no password automation. v1 covers replies; originals/reposts/likes are deferred.
+
+x-cleaner is a TypeScript CLI built on Playwright that drives a persistent Chromium profile against your logged-in X.com session. Pacing targets ~6 deletes/minute with jittered timing, hourly cap 360, daily cap 1500, and aborts on anomaly. Designed to keep one residential IP and one logged-in profile believable to X's automation defenses.
+
+## Docs
+
+- [README](https://github.com/cocodedk/x-cleaner/blob/main/README.md): install, login, dry-run, real-run, recovery
+- [PLAN](https://github.com/cocodedk/x-cleaner/blob/main/docs/PLAN.md): goals, architecture, decisions, milestones
+- [Architecture](https://github.com/cocodedk/x-cleaner/blob/main/docs/architecture.md): module layering and rationale
+- [Selectors](https://github.com/cocodedk/x-cleaner/blob/main/docs/selectors.md): X DOM reference (verified live, snapshot 2026-04-27)
+- [Rate limits](https://github.com/cocodedk/x-cleaner/blob/main/docs/rate-limits.md): pacing strategy and abort logic
+- [Testing](https://github.com/cocodedk/x-cleaner/blob/main/docs/testing.md): three-layer strategy (unit, fixture-HTML integration, gated E2E)
+- [CLAUDE.md](https://github.com/cocodedk/x-cleaner/blob/main/CLAUDE.md): coding conventions and required skills for AI assistants
+- [Contributing](https://github.com/cocodedk/x-cleaner/blob/main/CONTRIBUTING.md): local setup, hooks, PR checklist
+
+## Optional
+
+- [Website (English)](https://cocodedk.github.io/x-cleaner/)
+- [Website (Persian)](https://cocodedk.github.io/x-cleaner/fa/)
+- [Issues](https://github.com/cocodedk/x-cleaner/issues)
+- [Releases](https://github.com/cocodedk/x-cleaner/releases)
