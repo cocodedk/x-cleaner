@@ -17,7 +17,7 @@ x-cleaner is a TypeScript CLI built on Playwright that drives a persistent Chrom
 
 ## Optional
 
-- [Website (English)](https://cocodedk.github.io/x-cleaner/)
-- [Website (Persian)](https://cocodedk.github.io/x-cleaner/fa/)
+- [Website (English)](https://x-cleaner.cocode.dk/)
+- [Website (Persian)](https://x-cleaner.cocode.dk/fa/)
 - [Issues](https://github.com/cocodedk/x-cleaner/issues)
 - [Releases](https://github.com/cocodedk/x-cleaner/releases)
