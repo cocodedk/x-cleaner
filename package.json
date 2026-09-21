@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "description": "Local Chromium-driven cleanup tool for your own X.com replies. No API tokens, no third-party server, no password automation.",
-  "homepage": "https://cocodedk.github.io/x-cleaner/",
+  "homepage": "https://x-cleaner.cocode.dk/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cocodedk/x-cleaner.git"

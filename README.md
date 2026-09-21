@@ -9,8 +9,8 @@ X's automation defenses.
 
 ## Website
 
-- [English](https://cocodedk.github.io/x-cleaner/)
-- [فارسی (Persian)](https://cocodedk.github.io/x-cleaner/fa/)
+- [English](https://x-cleaner.cocode.dk/)
+- [فارسی (Persian)](https://x-cleaner.cocode.dk/fa/)
 
 ## Status
 

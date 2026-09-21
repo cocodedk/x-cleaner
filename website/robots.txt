@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cocodedk.github.io/x-cleaner/sitemap.xml
+Sitemap: https://x-cleaner.cocode.dk/sitemap.xml
