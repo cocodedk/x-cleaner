@@ -25,6 +25,8 @@ html, body {
 }
 
 main { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+/* The cocode.dk frame (brand.cocode.dk) lines up with this column; keep the gutters in step. */
+cocode-head, cocode-foot { --cocode-max: 720px; --cocode-gutter: 24px; }
 
 a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border); transition: text-decoration-color 0.15s; }
 a:hover { text-decoration-color: var(--accent); }
@@ -37,12 +39,6 @@ h3 { font-size: 16px; margin: 24px 0 8px; }
 p { margin: 0 0 16px; }
 .muted { color: var(--muted); font-size: 14px; }
 .tagline { color: var(--muted); font-size: 17px; margin: 0 0 32px; max-width: 60ch; }
-
-.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; font-size: 14px; }
-.brand { font-family: var(--mono); color: var(--muted); }
-.brand b { color: var(--text); font-weight: 500; }
-.lang-switch { font-family: "Vazirmatn", var(--sans); color: var(--muted); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; }
-.lang-switch:hover { color: var(--accent); border-color: var(--accent); }
 
 .cta, .cta-secondary { display: inline-block; padding: 13px 22px; border-radius: 6px; text-decoration: none; font-size: 15px; min-height: 44px; line-height: 1.2; }
 .cta { background: var(--accent); color: var(--bg); font-weight: 600; }
@@ -68,12 +64,8 @@ td.num { font-family: var(--mono); color: var(--accent); }
 
 .note { border: 1px solid var(--border); background: var(--surface); padding: 14px 16px; border-radius: 6px; margin: 16px 0 24px; font-size: 14.5px; }
 
-footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
-footer a { color: var(--muted); }
-
 [dir="rtl"] body { font-family: "Vazirmatn", var(--sans); }
 [dir="rtl"] pre, [dir="rtl"] code { font-family: var(--mono); direction: ltr; text-align: left; }
-[dir="rtl"] .lang-switch { font-family: "Inter", var(--sans); }
 [dir="rtl"] td.num { direction: rtl; text-align: end; }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { letter-spacing: 0; }
 [dir="rtl"] ol { list-style-type: persian; }
