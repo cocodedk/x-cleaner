@@ -35,17 +35,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Vazirmatn:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://brand.cocode.dk/v1.css">
+<script type="module" src="https://brand.cocode.dk/v1.js"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"x-cleaner","description":"Local Node.js + Playwright tool that deletes your own X.com replies through your own logged-in browser. No API tokens, no third-party servers.","url":"https://x-cleaner.cocode.dk/","downloadUrl":"https://github.com/cocodedk/x-cleaner","applicationCategory":"BusinessApplication","operatingSystem":"Linux, macOS, Windows","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Babak Bandpey","url":"https://cocode.dk","sameAs":["https://linkedin.com/in/babakbandpey","https://github.com/cocodedk"]},"codeRepository":"https://github.com/cocodedk/x-cleaner"}
 </script>
 </head>
 <body>
-<main>
-  <div class="topbar">
-    <span class="brand"><b>x-cleaner</b> &nbsp;·&nbsp; v1 &nbsp;·&nbsp; replies only</span>
-    <a href="fa/" class="lang-switch">فارسی</a>
-  </div>
+<cocode-head project="x-cleaner" accent="#f5a524" on-accent="#09090f" dark>
+  <a href="https://cocode.dk">cocode.dk</a>
+  <a href="fa/" hreflang="fa">فارسی</a>
+</cocode-head>
 
+<main>
   <h1>Delete your own X.com replies, slowly.</h1>
   <p class="tagline">A local Node.js + Playwright tool that drives your own logged-in browser. No API tokens, no third-party server, no password automation. Pacing target: ~6 deletes per minute.</p>
   <p>
@@ -103,10 +105,10 @@ npx playwright install chromium</code></pre>
 
   <h2>License &amp; source</h2>
   <p>Apache-2.0. Source on <a href="https://github.com/cocodedk/x-cleaner" target="_blank" rel="noreferrer">github.com/cocodedk/x-cleaner</a>. Issues and selector-breakage reports welcome.</p>
-
-  <footer>
-    <p>Apache-2.0 &nbsp;|&nbsp; &copy; 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; Created by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></p>
-  </footer>
 </main>
+
+<cocode-foot repo="cocodedk/x-cleaner" dark>
+  <a href="https://cocode.dk">cocode.dk</a>
+</cocode-foot>
 </body>
 </html>
